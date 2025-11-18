@@ -1,0 +1,64 @@
+# Dépendances
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Base de données
+*.db
+*.sqlite
+*.sqlite3
+joblink.db
+
+# Variables d'environnement
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build
+dist/
+build/
+out/
+.next/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Fichiers temporaires
+tmp/
+temp/
+*.tmp
+
+# Cache
+.cache/
+.eslintcache
+
+# Tests
+coverage/
+.nyc_output/
+
+# Backups
+*.bak
+*.backup
+*.old
+
+# Fichiers sensibles
+secrets.json
+config.json
