@@ -1,0 +1,166 @@
+================================================================================
+                 JOBLINK - INSTRUCTIONS DE DÉPLOIEMENT HEROKU
+================================================================================
+
+PROJET: JobLink - Portail d'emploi IA
+VERSION: 1.0
+DATE: November 16, 2025
+STATUS: ✅ PRÊT POUR HEROKU
+
+================================================================================
+                         INFORMATIONS DE COMPTE
+================================================================================
+
+Email Heroku:     tn.joblink@gmail.com
+Mot de passe:     Joblink30101986
+Nom de l'app:     joblink-tunisia
+URL finale:       https://joblink-tunisia.herokuapp.com
+
+================================================================================
+                    ÉTAPES DE DÉPLOIEMENT (RAPIDE)
+================================================================================
+
+1. CRÉER UN COMPTE HEROKU
+   - Allez sur https://www.heroku.com/
+   - Cliquez sur "Sign up"
+   - Utilisez l'email : tn.joblink@gmail.com
+   - Utilisez le mot de passe : Joblink30101986
+   - Confirmez votre email
+
+2. INSTALLER HEROKU CLI
+   Windows  : https://cli-assets.heroku.com/heroku-x64.exe
+   macOS    : brew tap heroku/brew && brew install heroku
+   Linux    : curl https://cli-assets.heroku.com/install.sh | sh
+
+3. SE CONNECTER À HEROKU
+   $ heroku login
+   (Utilisez vos identifiants)
+
+4. CLONER/TÉLÉCHARGER LE PROJET
+   $ tar -xzf joblink.tar.gz
+   $ cd joblink
+
+5. CRÉER L'APPLICATION HEROKU
+   $ heroku create joblink-tunisia
+
+6. CONFIGURER LES VARIABLES
+   $ heroku config:set DATABASE_URL=./joblink.db --app joblink-tunisia
+   $ heroku config:set NODE_ENV=production --app joblink-tunisia
+   $ heroku config:set SCRAPER_INTERVAL=3600 --app joblink-tunisia
+
+7. DÉPLOYER LE CODE
+   $ git push heroku master
+
+8. OUVRIR L'APPLICATION
+   $ heroku open --app joblink-tunisia
+
+================================================================================
+                         VÉRIFICATION DU DÉPLOIEMENT
+================================================================================
+
+Tester l'API:
+  - https://joblink-tunisia.herokuapp.com/api/health
+  - https://joblink-tunisia.herokuapp.com/api/stats
+  - https://joblink-tunisia.herokuapp.com/api/jobs?limit=5
+
+Voir les logs:
+  $ heroku logs --tail --app joblink-tunisia
+
+Redémarrer l'app:
+  $ heroku restart --app joblink-tunisia
+
+================================================================================
+                           FICHIERS IMPORTANTS
+================================================================================
+
+✓ Procfile              - Définit comment démarrer l'app
+✓ .env.example          - Variables d'environnement
+✓ package.json          - Dépendances Node.js
+✓ server.js             - Serveur principal
+✓ DEPLOYMENT_HEROKU_FR.md - Guide détaillé en français
+✓ deploy.sh             - Script de déploiement automatique
+
+================================================================================
+                         APRÈS LE DÉPLOIEMENT
+================================================================================
+
+1. Ajouter un domaine personnalisé
+   $ heroku domains:add www.joblink.tn --app joblink-tunisia
+
+2. Configurer SSL/HTTPS
+   $ heroku certs:auto:enable --app joblink-tunisia
+
+3. Ajouter le monitoring
+   Utilisez Uptime Robot (gratuit) : https://uptimerobot.com/
+
+4. Configurer les sauvegardes
+   $ heroku pg:backups:schedule --app joblink-tunisia
+
+5. Mettre à jour l'application
+   $ git add .
+   $ git commit -m "Description des changements"
+   $ git push heroku master
+
+================================================================================
+                         LIMITES DU PLAN GRATUIT
+================================================================================
+
+- L'app s'endort après 30 min d'inactivité (Dyno free)
+- Stockage limité à 512 MB
+- 550 heures/mois d'uptime
+- Pas de support prioritaire
+
+Solutions:
+- Utiliser Uptime Robot pour garder l'app active
+- Passer à un plan payant si nécessaire
+
+================================================================================
+                          SUPPORT ET RESSOURCES
+================================================================================
+
+Documentation Heroku:
+  https://devcenter.heroku.com/
+
+Aide Heroku:
+  https://help.heroku.com/
+
+Email JobLink:
+  tn.joblink@gmail.com
+
+Guide détaillé en français:
+  Voir DEPLOYMENT_HEROKU_FR.md dans le projet
+
+================================================================================
+                            PROCHAINES ÉTAPES
+================================================================================
+
+1. ✅ Créer un compte Heroku
+2. ✅ Installer Heroku CLI
+3. ✅ Télécharger le projet JobLink
+4. ✅ Exécuter les commandes de déploiement
+5. ✅ Tester l'application
+6. ✅ Configurer un domaine personnalisé
+7. ✅ Ajouter le monitoring
+8. ✅ Partager le lien avec vos amis !
+
+================================================================================
+                         RÉSUMÉ FINAL
+================================================================================
+
+Votre application JobLink sera accessible à :
+
+    🌐 https://joblink-tunisia.herokuapp.com/
+
+Avec :
+  - 309+ offres d'emploi
+  - 3 sources de scraping (Tanitjob, Keejob, LinkedIn)
+  - API REST complète
+  - Interface moderne et responsive
+  - Rafraîchissement horaire automatique
+
+Bon déploiement ! 🚀
+
+================================================================================
+Créé avec ❤️ pour les chercheurs d'emploi en Tunisie
+JobLink v1.0 - November 2025
+================================================================================
