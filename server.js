@@ -174,6 +174,22 @@ async function runScrapers() {
 
 // Routes API
 
+// Route racine
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: '🚀 JobLink - Portail d\'emploi IA',
+    version: '1.0.0',
+    endpoints: {
+      health: '/api/health',
+      jobs: '/api/jobs',
+      stats: '/api/stats',
+      scrape: '/api/scrape (POST)'
+    },
+    documentation: 'https://github.com/firasboukettaya/Joblink.tn'
+  });
+});
+
 // Récupérer toutes les offres avec pagination et filtres
 app.get('/api/jobs', (req, res) => {
   try {
