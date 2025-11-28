@@ -14,6 +14,7 @@ const db = new Database(process.env.DATABASE_URL || './joblink.db');
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
 // Initialiser la base de données
 function initDatabase() {
